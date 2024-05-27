@@ -388,19 +388,19 @@ function PANEL:Cmd(cmd)
 	RunGameUICommand(cmd)
 end
 function PANEL:ECmd(ecmd)
-	RunGameUICommand("engine "..ecmd)
+	RunConsoleCommand(ecmd)
 end
 
 function PANEL:Quit()
 	log("debug", "Quit.")
 	self:StartHideAnimation(function()
-		RunGameUICommand("engine quit")
+		RunConsoleCommand("quit")
 	end)
 end
 
 function PANEL:Disconnect()
 	log("debug", "Disconnect.")
-	RunGameUICommand("engine disconnect")
+	RunConsoleCommand("disconnect")
 end
 
 function LanguageChanged(lang)
